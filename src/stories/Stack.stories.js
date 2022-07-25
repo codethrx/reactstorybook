@@ -6,7 +6,7 @@ export default {
     numberOfChildren: { type: "number", defaultValue: 10 },
   },
 };
-const Template = ({ args, numberOfChildren }) => (
+const Template = ({ numberOfChildren, ...args }) => (
   <Stack {...args}>
     {[...Array(numberOfChildren).keys()].map((child) => (
       <div
@@ -29,10 +29,4 @@ HorizontalStack.args = {
   direction: "row",
   wrap: false,
   spacing: 100,
-};
-export const VerticalStack = Template.bind({});
-VerticalStack.args = {
-  direction: "column",
-  wrap: false,
-  spacing: 3,
 };
